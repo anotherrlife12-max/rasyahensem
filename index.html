@@ -1,0 +1,167 @@
+<!-- index.html -->
+<!-- This is the main HTML file for the Kaoruko Waguri fan website. -->
+<!-- Developers: Replace placeholder image paths in /assets/ with real images. -->
+<!-- Update bio text in About section, episode list, quotes, news items with accurate content. -->
+<!-- Add real social links in footer. Ensure all content is in Indonesian as primary. -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaoruko Waguri - Waguri | Situs Penggemar Resmi</title>
+    <meta name="description" content="Situs penggemar untuk Kaoruko Waguri (Waguri) dari The iDOLM@STER Shiny Colors. Temukan bio, episode, galeri, kutipan, dan karya penggemar.">
+    <meta name="keywords" content="Kaoruko Waguri, Waguri, The iDOLM@STER Shiny Colors, anime, idol, penggemar anime">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kaoruko Waguri - Waguri | Situs Penggemar">
+    <meta property="og:description" content="Temukan segala hal tentang Kaoruko Waguri, idola berbakat dari Shiny Colors.">
+    <meta property="og:image" content="/assets/waguri-hero.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kaoruko Waguri - Waguri | Situs Penggemar">
+    <meta name="twitter:description" content="Situs penggemar Kaoruko Waguri.">
+    <meta name="twitter:image" content="/assets/waguri-hero.jpg">
+    
+    <!-- JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kaoruko Waguri",
+        "alternateName": "Waguri",
+        "description": "Karakter idola dari The iDOLM@STER Shiny Colors.",
+        "image": "/assets/waguri-hero.jpg",
+        "url": "https://yourdomain.com",
+        "sameAs": [
+            "https://idolmaster.jp/shinycolors/",
+            "https://twitter.com/waguri_fan"
+        ]
+    }
+    </script>
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#FFB6C1">
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-blue-100 text-gray-800">
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <img src="/assets/waguri-hero.jpg" alt="Kaoruko Waguri dalam pose idola yang menawan" loading="eager" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">Kaoruko Waguri (Waguri)</h1>
+            <p class="hero-subtitle">Idola Berbakat dari The iDOLM@STER Shiny Colors</p>
+            <button class="cta-button" onclick="scrollToSection('about')">Pelajari Lebih Lanjut (Learn More)</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section about-section">
+            <h2 class="section-title">Tentang Kaoruko Waguri</h2>
+            <div class="about-content">
+                <p>Kaoruko Waguri, atau dikenal sebagai Waguri, adalah seorang idola muda berbakat dari unit L'Antica di The iDOLM@STER Shiny Colors. Dengan kepribadian ceria dan suara yang memukau, ia telah memikat hati penggemar di seluruh dunia. Lahir pada 15 Maret, Waguri memiliki tinggi 158 cm dan hobi bernyanyi serta menari.</p>
+                <!-- Developers: Update bio with more details from official sources. -->
+            </div>
+        </section>
+
+        <section id="episodes" class="section episodes-section">
+            <h2 class="section-title">Episode Terkait</h2>
+            <ul class="episodes-list">
+                <li>Episode 1: Debut Waguri - Petualangan dimulai!</li>
+                <li>Episode 5: Konser Pertama L'Antica</li>
+                <li>Episode 12: Rahasia di Balik Senyuman Waguri</li>
+                <!-- Developers: Add real episode links or embeds if available. -->
+            </ul>
+        </section>
+
+        <section id="gallery" class="section gallery-section">
+            <h2 class="section-title">Galeri Foto</h2>
+            <div class="gallery-grid">
+                <img src="/assets/gallery/1.jpg" alt="Waguri di panggung konser" loading="lazy" onclick="openLightbox(this)">
+                <img src="/assets/gallery/2.jpg" alt="Waguri dengan kostum idola" loading="lazy" onclick="openLightbox(this)">
+                <img src="/assets/gallery/3.jpg" alt="Waguri tersenyum cerah" loading="lazy" onclick="openLightbox(this)">
+                <img src="/assets/gallery/4.jpg" alt="Waguri dalam sesi foto" loading="lazy" onclick="openLightbox(this)">
+            </div>
+            <!-- Lightbox Modal -->
+            <div id="lightbox" class="lightbox" tabindex="-1" role="dialog" aria-label="Galeri Lightbox">
+                <span class="close" onclick="closeLightbox()" aria-label="Tutup">&times;</span>
+                <img id="lightbox-img" src="" alt="Gambar besar">
+                <button class="prev" onclick="changeImage(-1)" aria-label="Gambar Sebelumnya">❮</button>
+                <button class="next" onclick="changeImage(1)" aria-label="Gambar Berikutnya">❯</button>
+            </div>
+        </section>
+
+        <section id="quotes" class="section quotes-section">
+            <h2 class="section-title">Kutipan Terkenal</h2>
+            <div class="carousel-container" role="region" aria-label="Carousel Kutipan">
+                <div class="carousel" id="quotes-carousel">
+                    <div class="carousel-slide active">
+                        <blockquote>"Musik adalah jiwaku!" - Waguri</blockquote>
+                    </div>
+                    <div class="carousel-slide">
+                        <blockquote>"Bersama penggemar, kita bersinar lebih terang." - Waguri</blockquote>
+                    </div>
+                    <div class="carousel-slide">
+                        <blockquote>"Jangan menyerah pada mimpi!" - Waguri</blockquote>
+                    </div>
+                </div>
+                <button class="carousel-prev" onclick="moveCarousel(-1)" aria-label="Sebelumnya">❮</button>
+                <button class="carousel-next" onclick="moveCarousel(1)" aria-label="Berikutnya">❯</button>
+            </div>
+            <!-- Developers: Add more quotes and ensure keyboard navigation in app.js. -->
+        </section>
+
+        <section id="fanworks" class="section fanworks-section">
+            <h2 class="section-title">Karya Penggemar</h2>
+            <p>Bagikan karya seni atau fanfic Anda tentang Waguri!</p>
+            <form class="upload-form" aria-label="Form Unggah Karya Penggemar">
+                <label for="file-upload">Pilih File (Choose File):</label>
+                <input type="file" id="file-upload" accept="image/*,text/*" required>
+                <label for="description">Deskripsi (Description):</label>
+                <textarea id="description" rows="4" placeholder="Ceritakan karya Anda..."></textarea>
+                <button type="submit" class="submit-button">Unggah (Upload)</button>
+            </form>
+            <!-- Developers: This is a stub; integrate with backend for real uploads. -->
+        </section>
+
+        <section id="news" class="section news-section">
+            <h2 class="section-title">Berita & Update</h2>
+            <article class="news-item">
+                <h3>Update Terbaru: Konser Virtual Waguri!</h3>
+                <p>Tanggal: 15 Oktober 2023 - Jangan lewatkan penampilan spesial.</p>
+            </article>
+            <article class="news-item">
+                <h3>Merchandise Baru Dirilis</h3>
+                <p>Tanggal: 1 September 2023 - Boneka Waguri edisi terbatas.</p>
+            </article>
+            <!-- Developers: Update with real news from official sources. -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Situs Penggemar Kaoruko Waguri. Dibuat dengan ❤️ untuk penggemar.</p>
+        <ul class="social-links">
+            <li><a href="https://twitter.com/waguri_fan" aria-label="Twitter">Twitter</a></li>
+            <li><a href="https://instagram.com/waguri_official" aria-label="Instagram">Instagram</a></li>
+            <!-- Developers: Update social links. -->
+        </ul>
+    </footer>
+
+    <script src="app.js"></script>
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
+    </script>
+</body>
+</html>
