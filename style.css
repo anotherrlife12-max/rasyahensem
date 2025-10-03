@@ -1,0 +1,301 @@
+/* styles.css */
+/* Custom styles for Kaoruko Waguri fan website. Anime fan aesthetic: pastel colors, rounded cards. */
+/* Mobile-first responsive design. Overrides Tailwind utilities as needed. */
+/* Developers: Adjust colors (pastel pink #FFB6C1, blue #ADD8E6) and add more custom rules. */
+
+:root {
+    --pastel-pink: #FFB6C1;
+    --pastel-blue: #ADD8E6;
+    --rounded-card: 12px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 1rem;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    background: var(--pastel-pink);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: var(--rounded-card);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #FF69B4;
+}
+
+.section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.about-content, .episodes-list {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--rounded-card);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.episodes-list {
+    list-style: none;
+    padding: 0;
+}
+
+.episodes-list li {
+    padding: 1rem;
+    background: var(--pastel-blue);
+    margin-bottom: 1rem;
+    border-radius: var(--rounded-card);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--rounded-card);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: var(--rounded-card);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: var(--rounded-card);
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    padding: 2rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.carousel-slide blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #555;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+
+.upload-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--rounded-card);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.upload-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.upload-form input, .upload-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--rounded-card);
+    box-sizing: border-box;
+}
+
+.submit-button {
+    background: var(--pastel-pink);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: var(--rounded-card);
+    cursor: pointer;
+    width: 100%;
+}
+
+.news-item {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: var(--rounded-card);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--pastel-pink);
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .section-title { font-size: 2rem; }
+    .carousel-slide blockquote { font-size: 1.2rem; }
+}
+
+/* Accessibility: Focus styles */
+button:focus, a:focus, .lightbox:focus {
+    outline: 2px solid var(--pastel-blue);
+}
